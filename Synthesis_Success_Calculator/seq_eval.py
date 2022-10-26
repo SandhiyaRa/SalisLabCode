@@ -1422,12 +1422,7 @@ def SSC_evaluate(seq_list, verbose = False, jsonify=False):
     if jsonify:
         return json.dumps(all_results)
         
-        csvf = r"file.csv"
-
-        with open(csvf, 'wb') as f:
-            w = csv.writer(f, delimiter=',')
-            for s in all_results:
-                w.writerow(s)
+        np.savetxt('resultsdgencode01trunacgtunchnged.csv',all_results ,delimiter=',')
         return all_results
 
 if __name__=="__main__":
