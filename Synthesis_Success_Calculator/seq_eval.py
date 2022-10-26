@@ -1422,6 +1422,9 @@ def SSC_evaluate(seq_list, verbose = False, jsonify=False):
         
     if jsonify:
         return json.dumps(all_results)
+        with open("sample.json", "w") as outfile:
+            outfile.write(all_results)
+
         
     return all_results
 
@@ -1432,5 +1435,4 @@ if __name__=="__main__":
     sequences = pd.read_csv('SupplementaryData1.csv', header=0).loc[1:1, 'Sequence']
     results = SSC_evaluate(sequences)
     print results
-    with open("sample.json", "w") as outfile:
-        outfile.write(results)
+   
