@@ -1421,9 +1421,9 @@ def SSC_evaluate(seq_list, verbose = False, jsonify=False):
         all_results[i]['highlighted_regions_with_features'] = all_highlighted_regions
         
     if jsonify:
-        return json.dumps(all_results)
+        
         with open("sample.json", "w") as outfile:
-            outfile.write(all_results)
+            json.dumps(all_results, outfile)
 
         
     return all_results
