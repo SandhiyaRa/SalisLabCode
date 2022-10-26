@@ -1,4 +1,5 @@
 import csv
+import pandas as df
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))  
@@ -1431,6 +1432,8 @@ if __name__=="__main__":
     sequences = pd.read_csv('SupplementaryData1.csv', header=0).loc[1:1, 'Sequence']
     results = SSC_evaluate(sequences)
     print results
+    df = pd.DataFrame(results)
+    
     csvf = r"file.csv"
 
     with open(csvf, 'wb') as f:
