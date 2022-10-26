@@ -1432,12 +1432,5 @@ if __name__=="__main__":
     sequences = pd.read_csv('SupplementaryData1.csv', header=0).loc[1:1, 'Sequence']
     results = SSC_evaluate(sequences)
     print results
-    df = pd.DataFrame(results)
-    
-    csvf = r"file.csv"
-
-    with open(csvf, 'wb') as f:
-        w = csv.writer(f, delimiter=',')
-        for s in results:
-            w.writerow(s)
-    
+    with open("sample.json", "w") as outfile:
+        outfile.write(results)
