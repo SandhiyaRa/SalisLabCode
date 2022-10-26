@@ -1418,12 +1418,13 @@ def SSC_evaluate(seq_list, verbose = False, jsonify=False):
 
         all_highlighted_regions.sort(key = lambda location: location[0], reverse=False)
         all_results[i]['highlighted_regions_with_features'] = all_highlighted_regions
-
+        
     if jsonify:
         return json.dumps(all_results)
-        
         np.savetxt('resultsdgencode01trunacgtunchnged.csv',all_results ,delimiter=',')
-     return all_results
+    return all_results
+
+    
 
 if __name__=="__main__":
     
