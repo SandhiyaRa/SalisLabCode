@@ -1,3 +1,4 @@
+import csv
 import sys
 import os
 sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))  
@@ -1420,7 +1421,14 @@ def SSC_evaluate(seq_list, verbose = False, jsonify=False):
 
     if jsonify:
         return json.dumps(all_results)
-    return all_results
+        
+        csvf = r"file.csv"
+
+        with open(csvf, 'wb') as f:
+            w = csv.writer(f, delimiter=',')
+            for s in all_results:
+                w.writerow(s)
+        return all_results
 
 if __name__=="__main__":
     
