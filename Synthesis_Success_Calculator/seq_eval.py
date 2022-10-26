@@ -1436,6 +1436,3 @@ if __name__=="__main__":
     results = SSC_evaluate(sequences)
     print results
     
-    with open("sample1.json", "wb") as outfile:
-        outfile.write(results)
-   
