@@ -1423,7 +1423,7 @@ def SSC_evaluate(seq_list, verbose = False, jsonify=False):
         return json.dumps(all_results)
         
         np.savetxt('resultsdgencode01trunacgtunchnged.csv',all_results ,delimiter=',')
-        return all_results
+     return all_results
 
 if __name__=="__main__":
     
